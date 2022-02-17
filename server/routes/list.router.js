@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     pool.query(sqlText)
     .then((result) => {
         console.log('GET router works from the database', result);
-        res.sendStatus(500);
+        res.sendStatus(result.rows);
     })
     .catch((error) => {
         console.log(`Error making database query ${sqlText}`, error);
