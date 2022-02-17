@@ -6,6 +6,7 @@ const pool = require('../modules/pool.js');
 
 
 // setup GET route to get all shopping-list from database
+
 router.get('/', (req,res) => {
     const sqlText= `SELECT * FROM "shopping-list" ORDER BY name DESC;`;
     pool.query(sqlText)
@@ -24,3 +25,33 @@ router.get('/', (req,res) => {
 
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
