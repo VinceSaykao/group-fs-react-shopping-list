@@ -35,14 +35,10 @@ Link to software that is required to install the app (e.g. node).
 7. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+1. Track grocery or other purchases.
+2. Store past purchases to easily find later.
+3. Keep track of future purchasing needs.
 
 
 ## Built With
