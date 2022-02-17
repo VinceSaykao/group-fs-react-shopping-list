@@ -10,7 +10,8 @@ router.post("/", (req, res) => {
         ($1, $2, $3, $4);
     `;
 
-	const [name, qty, unit, purchased] = req.body;
+	const {name, qty, unit, purchased} = req.body;
+    console.log({name, qty, unit, purchased});
 	const sqlOptions = [name, qty, unit, purchased];
 
 	pool
@@ -21,6 +22,7 @@ router.post("/", (req, res) => {
 		})
 		.catch((err) => {
 			console.error("Error from server post route:", err);
+            res.sendStatus(500);
 		});
 });
 
