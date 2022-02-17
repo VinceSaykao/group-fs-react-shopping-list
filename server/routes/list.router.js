@@ -14,17 +14,35 @@ router.post("/", (req, res) => {
     console.log({name, qty, unit, purchased});
 	const sqlOptions = [name, qty, unit, purchased];
 
-	pool
-		.query(sqlText, sqlOptions)
-		.then((response) => {
-			console.log("Success from server post route:", response);
-			res.sendStatus(201);
-		})
-		.catch((err) => {
-			console.error("Error from server post route:", err);
-            res.sendStatus(500);
-		});
+    pool
+    .query(sqlText, sqlOptions)
+    .then((response) => {
+        console.log("Success from server post route:", response);
+        res.sendStatus(201);
+    })
+    .catch((err) => {
+        console.error("Error from server post route:", err);
+        res.sendStatus(500);
+    });
 });
+
+
+// setup GET route to get all shopping-list from database
+
+router.get('/', (req,res) => {
+    const sqlText= `SELECT * FROM "shopping-list" ORDER BY name DESC;`;
+    pool.query(sqlText)
+    .then((result) => {
+        console.log('GET router works from the database', result);
+        res.send(result.rows);
+    })
+    .catch((error) => {
+        console.log(`Error making database query ${sqlText}`, error);
+        res.sendStatus(500);
+    })
+});
+
+
 
 router.put("/:id", (req, res) => {
 	let updateItem = req.params.id;
@@ -49,3 +67,7 @@ router.put("/:id", (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
