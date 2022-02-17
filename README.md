@@ -11,7 +11,7 @@
 
 _Duration: 4 hours_
 
-This app was created as a solution for tracking purchases. 
+This app was created as a solution for tracking purchases. It allows the user to input items with a name, quantity, and unit of measurement, making storing past purchases a breeze.
 
 ## Screen Shot
 
