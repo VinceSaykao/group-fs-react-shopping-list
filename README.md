@@ -1,19 +1,17 @@
 # Grocery List
 
-## Description
-
-_Duration: 4 hours_
-
-**Created By:**
+## The Team
 
 - [Mark Terry](https://github.com/MarkTerry3)
 - [Benjamin Pedrick](https://github.com/benped)
 - [Vince Saykao](https://github.com/VinceSaykao)
 - [David Meuer](https://github.com/Davey-M)
 
-This app was created as a group project for Prime Digital Academy.
+## Description
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+_Duration: 4 hours_
+
+This app was created as a solution for tracking purchases. 
 
 ## Screen Shot
 
