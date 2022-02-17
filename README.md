@@ -57,15 +57,13 @@ How does someone use this application? Tell a user story here.
 
 ## Built With
 
-List technologies and frameworks here
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
+- Node.js
+- React.js
+- Express.js
+- Javascript
+- HTML5
+- CSS
+- Axios
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
-
-## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped us to make this application a reality.
