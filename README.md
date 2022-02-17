@@ -1,11 +1,3 @@
-(View Raw will give you the markdown that you can copy to your repos!)
-
-
-![MIT LICENSE](https://img.shields.io/github/license/scottbromander/the_marketplace.svg?style=flat-square)
-![REPO SIZE](https://img.shields.io/github/repo-size/scottbromander/the_marketplace.svg?style=flat-square)
-![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
-![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
-
 # Grocery List
 
 ## Description
@@ -14,10 +6,10 @@ _Duration: 4 hours_
 
 **Created By:**
 
-- Mark Terry
-- Benjamin Pedrick
-- Vince Saykao
-- David Meuer
+- [Mark Terry](https://github.com/MarkTerry3)
+- [Benjamin Pedrick](https://github.com/benped)
+- [Vince Saykao](https://github.com/VinceSaykao)
+- [David Meuer](https://github.com/Davey-M)
 
 This app was created as a group project for Prime Digital Academy.
 
