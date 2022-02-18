@@ -8,17 +8,30 @@ function ItemsController({ listItems, getList }) {
 	};
 
 	const resetItems = () => {
-		for (let item of listItems) {
+		let isDone = new Array(listItems.length).fill(false);
+		console.log(isDone);
+		for (let i = 0; i < listItems.length; i++) {
+			const item = listItems[i];
 			const data = {
 				purchased: false,
 			};
-			axios.put(`/list/${item.id}`);
+			axios
+				.put(`/list/${item.id}`, data)
+				.then((response) => {
+					isDone[i] = true;
+					if (!isDone.includes(false)) {
+						getList();
+					}
+				})
+				.catch((err) => {
+					console.error("Issue with update client:", err);
+				});
 		}
 	};
 
 	return (
 		<>
-			<button>Reset</button>
+			<button onClick={resetItems}>Reset</button>
 			<button>Clear</button>
 		</>
 	);
