@@ -1,4 +1,88 @@
+body {
+  background-image: url("../images/background-grocery.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+}
+
+
+
+
 main {
   width: 90%;
   margin: auto;
+  align-items: center;
+  background-color: #4444;
+  border: 4px solid rgb(151, 151, 151);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+
+  
+}
+
+#apple {
+  position: fixed;
+  height:400px;
+  margin-left: 50px;
+  margin-top: 300px;
+  -webkit-transform:rotate(-50deg);
+  z-index: -2;
+
+
+}
+
+#corn {
+  position: fixed;
+  height:450px;
+  margin-left: 300px;
+  margin-top: 300px;
+  -webkit-transform:rotate(20deg);
+  z-index: -1;
+
+
+}
+
+#potato {
+  position: fixed;
+  height: 500px;
+  margin-left: 130px;
+  margin-top: 225px;
+  -webkit-transform:rotate(-10deg);
+  z-index: -3;
+
+}
+
+#item-stuff {
+  background-color: rgba(231, 231, 231, 0.267);
+  border-radius: 10px;
+}
+
+#input-stuff {
+  background-color: rgb(173, 173, 173);
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  border: 2px solid white;
+  height: 60px;
+  border-radius: 10px;
+  
+}
+
+#input-stuff * {
+  margin: 0rem 1rem
+
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  background-color: rgb(179, 179, 179);
+  border-radius: 5px;
 }

@@ -73,26 +73,27 @@ function InputForm({fetchItems}) {
 
     <>
         <h2>Add an Item</h2>
-
+<div id="input-stuff">
         <form onSubmit={handleSubmit}>
-                <label>Item:</label>
+                <label>Item</label>
                 <input
                     onChange={(event) => setNewListName(event.target.value)}
-                    value={newListName}
+                    value={newListName} placeholder="Avocado..."
                     required/>
-                <label>Quantity:</label>
+                <label>Quantity</label>
                 <input
                     type="number"
                     onChange={(event) => setNewListQuantity(event.target.value)}
-                    value={newListQuantity} 
+                    value={newListQuantity}  placeholder="3.00..."
                     required/>
                 <label>Unit</label>
                 <input 
                     onChange={(event) => setNewListUnit(event.target.value)}
-                    value={newListUnit}
+                    value={newListUnit} placeholder="2 lbs..."
                     required/>
                 <button type="submit">Save</button>
         </form>
+        </div>
     </>
 
     )

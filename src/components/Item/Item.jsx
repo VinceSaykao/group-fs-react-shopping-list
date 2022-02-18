@@ -1,42 +1,35 @@
 import axios from "axios";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 function Item({ listItem, getList }) {
-    
 	// Runs when delete is clicked, should take in the ID for SQL Delete Function
 	const handleDelete = (listItem) => {
 		console.log("Inside Item Delete", listItem);
 
-
 		Swal.fire({
-			title: 'Are you sure?',
+			title: "Are you sure?",
 			text: "You won't be able to revert this!",
-			icon: 'warning',
+			icon: "warning",
 			showCancelButton: true,
-			confirmButtonColor: 'green',
-			cancelButtonColor: 'red',
-			confirmButtonText: 'Yes, delete it!'
-		  }).then((result) => {
+			confirmButtonColor: "green",
+			cancelButtonColor: "red",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
 			if (result.isConfirmed) {
 				axios
-				.delete(`/list/${listItem}`)
-				.then((result) => {
-					console.log("Deleted, this is response", result);
-	
-					// 
-					getList();
-				})
-				.catch((err) => {
-					console.log("Error on delete", err);
-	
-				});
-			  Swal.fire(
-				'Deleted!',
-				'Your file has been deleted.',
-				'success'
-			  )
+					.delete(`/list/${listItem}`)
+					.then((result) => {
+						console.log("Deleted, this is response", result);
+
+						//
+						getList();
+					})
+					.catch((err) => {
+						console.log("Error on delete", err);
+					});
+				Swal.fire("Deleted!", "Your file has been deleted.", "success");
 			}
-		  })
+		});
 	};
 
 	// Runs when buy is clicked, should take in the ID number for the SQL table
@@ -48,7 +41,7 @@ function Item({ listItem, getList }) {
 			.put(`/list/${listItem.id}`, { purchased: purchasedFlip })
 			.then((result) => {
 				console.log("Updated purchase, this is response");
-                // Get Updated list, might need rename? 
+				// Get Updated list, might need rename?
 				getList();
 			})
 			.catch((res) => {
@@ -58,6 +51,7 @@ function Item({ listItem, getList }) {
 
 	return (
 		<>
+		<div id="item-stuff">
 			<div key={listItem.id}>
 				<p>{listItem.name}</p>
 				<p>
@@ -69,6 +63,7 @@ function Item({ listItem, getList }) {
 					<button onClick={() => handleBuy(listItem)}>Buy</button>
 				)}
 				<button onClick={() => handleDelete(listItem.id)}>Remove</button>
+			</div>
 			</div>
 		</>
 	);
