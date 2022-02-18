@@ -1,6 +1,24 @@
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function ItemsController({ listItems, getList }) {
+	const checkClear = () => {
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "green",
+			cancelButtonColor: "red",
+			confirmButtonText: "Yes, delete them!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				clearItems();
+				Swal.fire("Deleted!", "Your file has been deleted.", "success");
+			}
+		});
+	};
+
 	const clearItems = () => {
 		// set an array to check which items have returned values
 		let isDone = new Array(listItems.length).fill(false);
@@ -63,7 +81,7 @@ function ItemsController({ listItems, getList }) {
 	return (
 		<>
 			<button onClick={resetItems}>Reset</button>
-			<button onClick={clearItems}>Clear</button>
+			<button onClick={checkClear}>Clear</button>
 		</>
 	);
 }
