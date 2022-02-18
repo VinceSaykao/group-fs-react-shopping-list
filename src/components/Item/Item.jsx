@@ -58,6 +58,7 @@ function Item({ listItem, getList }) {
 
 	return (
 		<>
+		<div id="item-stuff">
 			<div key={listItem.id}>
 				<p>{listItem.name}</p>
 				<p>
@@ -69,6 +70,7 @@ function Item({ listItem, getList }) {
 					<button onClick={() => handleBuy(listItem)}>Buy</button>
 				)}
 				<button onClick={() => handleDelete(listItem.id)}>Remove</button>
+			</div>
 			</div>
 		</>
 	);
