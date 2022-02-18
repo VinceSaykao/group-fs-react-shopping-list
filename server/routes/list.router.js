@@ -29,7 +29,7 @@ router.post("/", (req, res) => {
 // setup GET route to get all shopping-list from database
 
 router.get("/", (req, res) => {
-	const sqlText = `SELECT * FROM "shopping-list" ORDER BY name DESC;`;
+	const sqlText = `SELECT * FROM "shopping-list" ORDER BY "name" ASC;`;
 	pool
 		.query(sqlText)
 		.then((result) => {
