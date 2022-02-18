@@ -4,6 +4,7 @@ import axios from "axios";
 import Input from "../Input/Input.jsx";
 import Item from "../Item/Item.jsx";
 import Header from "../Header/Header.jsx";
+import ItemsController from "../ItemsController/ItemsController.jsx";
 import "./App.css";
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
 			<Header />
 			<main>
 				<Input fetchItems={fetchItems} />
+
+				<ItemsController listItems={listItems} getList={fetchItems} />
 
 				{listItems.map((items) => (
 					<Item key={items.id} listItem={items} getList={fetchItems} />
