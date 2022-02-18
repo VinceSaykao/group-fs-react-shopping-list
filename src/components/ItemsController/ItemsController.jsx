@@ -2,8 +2,29 @@ import axios from "axios";
 
 function ItemsController({ listItems, getList }) {
 	const clearItems = () => {
-		for (let item of listItems) {
-			axios.delete();
+		// set an array to check which items have returned values
+		let isDone = new Array(listItems.length).fill(false);
+		console.log(isDone);
+
+		// loop through listItems to update
+		for (let i = 0; i < listItems.length; i++) {
+			const item = listItems[i];
+
+			// send ajax to the server
+			axios
+				.delete(`/list/${item.id}`)
+				.then((response) => {
+					// tell the function that this call is finished
+					isDone[i] = true;
+					// if all the calls to the server have returned, re-render the list
+					if (!isDone.includes(false)) {
+						getList();
+					}
+				})
+				.catch((err) => {
+					// handle errors
+					console.error("Issue with update client:", err);
+				});
 		}
 	};
 
