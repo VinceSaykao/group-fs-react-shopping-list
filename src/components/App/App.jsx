@@ -41,6 +41,7 @@ function App() {
 			<main>
 				<Input fetchItems={fetchItems} />
 
+				<h2>Shopping List</h2>
 				<ItemsController listItems={listItems} getList={fetchItems} />
 
 				{listItems.map((items) => (
