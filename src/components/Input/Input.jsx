@@ -21,6 +21,24 @@ function InputForm({fetchItems}) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        if (newListUnit.length > 20){
+            Swal.fire({
+                icon: 'error',
+                title: 'Unit Too Long',
+                text: '20 Character Max for Units!',
+              })
+            return;
+        }
+
+        if (newListName.length > 80){
+            Swal.fire({
+                icon: 'error',
+                title: 'Name Too Long',
+                text: '80 Character Max for Units!',
+              })
+            return;
+        }
+
         axios({
             method: 'POST',
             url: '/list',
@@ -43,6 +61,10 @@ function InputForm({fetchItems}) {
 
         }).catch(function (error) {
                 console.log('Error on add:', error);
+                // Works!
+                if(error.toString().includes('999')){
+                    alert('Server Requires All Inputs!')
+                }
             });
     }
 
@@ -57,17 +79,18 @@ function InputForm({fetchItems}) {
                 <input
                     onChange={(event) => setNewListName(event.target.value)}
                     value={newListName}
-                />
+                    required/>
                 <label>Quantity:</label>
                 <input
+                    type="number"
                     onChange={(event) => setNewListQuantity(event.target.value)}
                     value={newListQuantity} 
-                />
+                    required/>
                 <label>Unit</label>
                 <input 
                     onChange={(event) => setNewListUnit(event.target.value)}
                     value={newListUnit}
-                />
+                    required/>
                 <button type="submit">Save</button>
         </form>
     </>
