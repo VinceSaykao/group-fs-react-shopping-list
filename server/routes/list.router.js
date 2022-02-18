@@ -11,6 +11,13 @@ router.post("/", (req, res) => {
     `;
 
 	const { name, qty, unit, purchased } = req.body;
+
+    if (name == ''|| qty == ''|| unit == ''){
+        res.sendStatus(999);
+        console.log('Undefined Data Sent to server');
+        return;
+    }
+
 	console.log({ name, qty, unit, purchased });
 	const sqlOptions = [name, qty, unit, purchased];
 

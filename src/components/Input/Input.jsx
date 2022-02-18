@@ -61,6 +61,10 @@ function InputForm({fetchItems}) {
 
         }).catch(function (error) {
                 console.log('Error on add:', error);
+                // Doesn't work currently 
+                // if(error === 999){
+                //     alert('Inputs did not reach server!')
+                // }
             });
     }
 
