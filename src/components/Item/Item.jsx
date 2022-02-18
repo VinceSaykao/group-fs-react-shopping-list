@@ -1,4 +1,5 @@
 import axios from "axios";
+import Swal from 'sweetalert2'
 
 function Item({ listItem, getList }) {
     
@@ -6,18 +7,36 @@ function Item({ listItem, getList }) {
 	const handleDelete = (listItem) => {
 		console.log("Inside Item Delete", listItem);
 
-		axios
-			.delete(`/list/${listItem}`)
-			.then((result) => {
-				console.log("Deleted, this is response", result);
 
-                // 
-				getList();
-			})
-			.catch((err) => {
-				console.log("Error on delete", err);
-
-			});
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: 'green',
+			cancelButtonColor: 'red',
+			confirmButtonText: 'Yes, delete it!'
+		  }).then((result) => {
+			if (result.isConfirmed) {
+				axios
+				.delete(`/list/${listItem}`)
+				.then((result) => {
+					console.log("Deleted, this is response", result);
+	
+					// 
+					getList();
+				})
+				.catch((err) => {
+					console.log("Error on delete", err);
+	
+				});
+			  Swal.fire(
+				'Deleted!',
+				'Your file has been deleted.',
+				'success'
+			  )
+			}
+		  })
 	};
 
 	// Runs when buy is clicked, should take in the ID number for the SQL table
