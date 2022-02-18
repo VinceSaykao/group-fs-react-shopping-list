@@ -63,7 +63,7 @@ function ItemsController({ listItems, getList }) {
 	return (
 		<>
 			<button onClick={resetItems}>Reset</button>
-			<button>Clear</button>
+			<button onClick={clearItems}>Clear</button>
 		</>
 	);
 }
