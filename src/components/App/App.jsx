@@ -38,13 +38,12 @@ function App() {
 		<div className='App'>
 			<Header />
 			<main>
-				<p>Under Construction...</p>
-			</main>
-			<Input fetchItems={fetchItems} />
+				<Input fetchItems={fetchItems} />
 
-			{listItems.map((items) => (
-				<Item key={items.id} listItem={items} getList={fetchItems} />
-			))}
+				{listItems.map((items) => (
+					<Item key={items.id} listItem={items} getList={fetchItems} />
+				))}
+			</main>
 		</div>
 	);
 } // end of App function
