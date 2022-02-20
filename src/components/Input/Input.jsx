@@ -91,7 +91,7 @@ function InputForm({fetchItems}) {
                     onChange={(event) => setNewListUnit(event.target.value)}
                     value={newListUnit} placeholder="2 lbs..."
                     required/>
-                <button type="submit">Save</button>
+                <button id="save" type="submit">Save</button>
         </form>
         </div>
     </>

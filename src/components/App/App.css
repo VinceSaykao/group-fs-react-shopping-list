@@ -105,3 +105,18 @@ h2 {
   background-color: rgb(255, 0, 0);
 
 }
+
+#save {
+  background-color: rgba(123, 255, 0, 0.651);
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  margin: auto;
+
+}
+
+#save:hover {
+  background-color: rgb(123, 255, 0);
+
+}
