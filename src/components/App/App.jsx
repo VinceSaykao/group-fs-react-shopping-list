@@ -6,6 +6,8 @@ import Item from "../Item/Item.jsx";
 import Header from "../Header/Header.jsx";
 import ItemsController from "../ItemsController/ItemsController.jsx";
 import "./App.css";
+import logo from "../images/GLb.png"
+
 
 function App() {
 	const [listItems, setListItems] = useState([]);
@@ -42,12 +44,14 @@ function App() {
 				<Input fetchItems={fetchItems} />
 
 				<h2>Shopping List</h2>
+				
 				<ItemsController listItems={listItems} getList={fetchItems} />
 
 				{listItems.map((items) => (
 					<Item key={items.id} listItem={items} getList={fetchItems} />
 				))}
 			</main>
+			
 		</div>
 	);
 } // end of App function

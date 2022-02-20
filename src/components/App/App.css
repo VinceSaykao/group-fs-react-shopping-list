@@ -7,6 +7,14 @@ body {
 }
 
 
+.logo {
+ height: 100px;
+ display: inline-block;
+ position: relative;
+
+}
+
+
 
 
 main {
@@ -21,41 +29,13 @@ main {
   
 }
 
-#apple {
-  position: fixed;
-  height:400px;
-  margin-left: 50px;
-  margin-top: 300px;
-  -webkit-transform:rotate(-50deg);
-  z-index: -2;
-
-
-}
-
-#corn {
-  position: fixed;
-  height:450px;
-  margin-left: 300px;
-  margin-top: 300px;
-  -webkit-transform:rotate(20deg);
-  z-index: -1;
-
-
-}
-
-#potato {
-  position: fixed;
-  height: 500px;
-  margin-left: 130px;
-  margin-top: 225px;
-  -webkit-transform:rotate(-10deg);
-  z-index: -3;
-
-}
 
 #item-stuff {
   background-color: rgba(231, 231, 231, 0.267);
   border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  
 }
 
 #input-stuff {
@@ -85,4 +65,43 @@ h2 {
   letter-spacing: 5px;
   background-color: rgb(179, 179, 179);
   border-radius: 5px;
+}
+
+#item-stuff:hover {
+  background-color: rgba(255, 255, 255, 0.603);
+}
+
+#global-button {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+#global-button * {
+  margin: 0rem 1rem;
+}
+
+#reset {
+  background-color: rgba(255, 255, 0, 0.651);
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+#reset:hover {
+  background-color: rgb(255, 255, 0);
+}
+#clear {
+  background-color: rgba(255, 0, 0, 0.473);
+  border: none;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+#clear:hover {
+  background-color: rgb(255, 0, 0);
+
 }

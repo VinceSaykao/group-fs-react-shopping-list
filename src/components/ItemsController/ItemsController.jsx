@@ -80,8 +80,10 @@ function ItemsController({ listItems, getList }) {
 
 	return (
 		<>
-			<button onClick={resetItems}>Reset</button>
-			<button onClick={checkClear}>Clear</button>
+		<div id="global-button">
+			<button id="reset" onClick={resetItems}>Reset</button>
+			<button id="clear" onClick={checkClear}>Clear</button>
+			</div>
 		</>
 	);
 }
